@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'slick';
+    src: url(../slick/slick/fonts/slick.ttf);
+ }
 :root {
   --dark-color: #000;
   --light-color: #fff;
@@ -123,6 +127,7 @@ table {
   z-index: 998;
 }
 .burger-menu.active {
+  display: none;
   transform: translateY(0);
 }
 .burger-menu .nav-menu {
@@ -207,6 +212,7 @@ table {
   width: 20px;
   height: 20px;
   margin: 0 5px;
+  padding:0;
   border: 1px solid var(--dark-color);
   background: var(--light-color);
   border-radius: 50%;
@@ -229,11 +235,13 @@ table {
 }
 .text-block p {
   font-size: 28px;
+  line-height: 35px;
 }
-.history-blocks, .title-h2 {
+.title-h2 {
   margin-bottom: 60px;
 }
 .history-blocks {
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .title-h2 {
@@ -243,17 +251,23 @@ table {
   font-size: 40px;
 }
 .info-block {
-  width: 500px;
-  height: 400px;
+  flex: 500px 0 0;
   background: var(--dark-color);
   color: var(--light-color);
   align-items: center;
-}
-.info-block p {
-  width: 400px;
+  padding: 50px;
+  margin-bottom: 60px;
 }
 .info-block span {
   font-size: 48px;
+  line-height: 38px;
+}
+.info-block {
+  flex-direction: column;
+}
+.info-block p {
+  /* width: 100%; */
+  line-height: 22px;
 }
 /* Form */
 .contact-holder {
@@ -293,18 +307,18 @@ table {
   opacity: 0.5;
   color: var(--dark-color);
 }
-/* responsive */
+/* Responsive */
 /* Tablet */
 @media only screen
 and (min-width: 720px)
-and (max-width: 1023px) {
+and (max-width: 1024px) {
     .header {
       margin: 48px 0 96px;
     }
     .nav-menu {
       display: none;
     }
-    .burger-menu-btn, .nav-burger-menu {
+    .burger-menu-btn, .burger-menu.active, .nav-burger-menu {
       display: block;
     }
     .header {
@@ -329,6 +343,7 @@ and (max-width: 1023px) {
     }
     .text-block p {
       font-size: 20px;
+      line-height: 25px;
     }
     .title-h2, .info-block {
       margin-bottom: 32px;
@@ -336,25 +351,22 @@ and (max-width: 1023px) {
     .title-h2 {
       font-size: 28px;
     }
-    .history-blocks {
-      flex-wrap: wrap;
-    }
-    .info-block, .info-block p {
+    .info-block {
       width: 100%;
     }
     .info-block {
-      height: auto;
+      align-items: baseline;
+      flex: auto 0 0;
       padding: 48px
     }
 }
 /* Mobile */
 @media only screen
-and (min-width: 350px)
 and (max-width: 719px) {
     .header {
       margin: 0;
     }
-    .burger-menu-btn, .info-block span, .burger-menu.active .logo, .burger-menu.active .nav-burger-menu  {
+    .burger-menu-btn, .burger-menu.active, .info-block span, .burger-menu.active .logo, .burger-menu.active .nav-burger-menu  {
       display: block;
     }
     .burger-menu-btn, .burger-menu .logo {
@@ -388,14 +400,23 @@ and (max-width: 719px) {
     .logo, .nav-menu {
       display: none;
     }
-    .container-slider, .slick-slide .slider-img {
+    .container-slider {
       width: 100%;
     }
     .container-slider .slider .block-slider {
       margin: 0;
     }
     .slick-slide .slider-img {
-      height: 180px;
+      width: 100%;
+      height: auto;
+    }
+    .slider .slick-dots {
+      margin-top: 24px;
+    }
+    .slider .slick-dots button {
+      width: 8px;
+      height: 8px;
+      margin: 0 4px;
     }
     .container {
       width: auto;
@@ -403,26 +424,24 @@ and (max-width: 719px) {
     }
     .text-block p, .info-block p {
       font-size: 16px;
+      line-height: 20px;
     }
     .text-block, .title-h2, .info-block {
       margin-bottom: 24px;
     }
-    .history-blocks {
-      flex-wrap: wrap;
-      margin-bottom: 0;
-    }
     .title-h2 {
       font-size: 20px;
     }
-    .info-block, .info-block p {
+    .info-block {
       width: 100%;
     }
     .info-block {
-      height: auto;
+      flex: auto 0 0;
       padding: 20px;
     }
     .info-block span {
       font-size: 24px;
+      line-height: 30px;
     }
     .contact {
       height: 230px;

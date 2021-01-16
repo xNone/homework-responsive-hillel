@@ -19,12 +19,10 @@ $('.slider').slick({
   slidesToScroll: 3,
   responsive: [
     {
-      breakpoint: 1024,
+      breakpoint: 1025,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: true
+        slidesToScroll: 2
       }
     },
     {
